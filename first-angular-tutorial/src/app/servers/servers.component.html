@@ -1,0 +1,30 @@
+
+<!-- using the server.component file's custom html tag in this new module's html template file -->
+<!-- adding multiple components (components are reusable), this is component nesting -->
+
+<!-- to use property bind on the disabled property, need to use [property-name]="class-property-from-typescript" (binds the dom's html property) -->
+<!-- directive binding and component binding also possible (see later) -->
+<!-- using an input DOM event: the user can input the name of the server: (input)="typescript-event name()" -- the $event contains the event data -->
+<!-- using event binding for the click event: (click)="typescript-event-name($event)"  -->
+<label>Server name</label>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button> -->
+
+<!-- Example of two way data binding (replacing the input event) by combining the property and event binding: [(directive-name)]="typescript..." -->
+<!-- triggers the input event and automatically update the event data and property value -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+<!-- to output the current typescript property value, using string interpolation -->
+<!-- <p>{{ allowNewServer }}</p> -->
+
+<!-- property binding also is possible: -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+
+<!-- outout the value of a property by using string interpolation: -->
+<p>{{ serverCreationStatus }}</p>
+
+<app-server></app-server>
+<app-server></app-server>
