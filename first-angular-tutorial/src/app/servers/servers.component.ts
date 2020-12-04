@@ -26,7 +26,7 @@ export class ServersComponent implements OnInit {
   serverName = 'TestServer';
 
   constructor() { 
-    // after 2 seconds the anonim arrow function will be executed and enables the button in the html by using data binding
+    // after 2 seconds the anonim arrow function in the constructor will be executed and enables the button in the html by using data binding
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
@@ -43,7 +43,7 @@ export class ServersComponent implements OnInit {
 
   // function for event binding, the event will call it which is triggered by a user
   onCreateServer() {
-    this.serverCreationStatus = "Server was created!";
+    this.serverCreationStatus = "Server was created, Server name is: " + this.serverName;
   }
 
 }

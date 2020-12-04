@@ -1,0 +1,7 @@
+
+<label>Please enter a username</label>
+<input type="text" class="form-control" (input)="onUserInput($event)">
+<p>{{ userName }}</p>
+<br>
+<button class="btn btn-primary" [disabled]="!userReset()" (click)="onUserReset()">Reset user name</button>
+<p>{{ userCurrentName }}</p>
