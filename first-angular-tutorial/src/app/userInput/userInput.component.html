@@ -1,7 +1,17 @@
 
+<h2>Assigment 2:</h2>
+
+<h3>Own solution</h3>
+
 <label>Please enter a username</label>
-<input type="text" class="form-control" (input)="onUserInput($event)">
-<p>{{ userName }}</p>
-<br>
+<input type="text" class="form-control" [(ngModel)]="userName">
 <button class="btn btn-primary" [disabled]="!userReset()" (click)="onUserReset()">Reset user name</button>
-<p>{{ userCurrentName }}</p>
+<p>{{ userName }}</p>
+
+<h3>Example solution</h3>
+<!-- using template inline typescript code -->
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{ userName }}</p>
+<button class="btn btn-primary" [disabled]="userName === ''" (click)="userName = ''">Reset Username</button>
+

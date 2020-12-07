@@ -18,6 +18,14 @@
 <!-- <p>{{ serverName }}</p> -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
+<!-- Assigment: 3 -->
+<button class="btn btn-info" (click)="onClickDetails()">Display Details</button>
+<p *ngIf="showPassword">{{ adminPassword }}</p>
+<p *ngFor="let logs of detailsButtonLog"
+[ngStyle]="{backgroundColor: getBlue()}"
+[ngClass]="{log5: detailsButtonLog.length > 4}"
+>{{ detailsButtonLog[logs] }}</p>
+
 <!-- to output the current typescript property value, using string interpolation -->
 <!-- <p>{{ allowNewServer }}</p> -->
 
@@ -25,7 +33,15 @@
 <!-- <p [innerText]="allowNewServer"></p> -->
 
 <!-- outout the value of a property by using string interpolation: -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- adding a built in structural directive that dynamicly changes the DOM, usually only the *ngIf="typescriptCode" is used, without the else: -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is  {{ serverName }}</p>
+<!-- adding an else ngIf condition by using a build in ng-template with a local reference: <ng-template #referenceName></ng-template>: -->
+<ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template>
+
+<!-- adding a structural directive *ngFor to dinamically create a list in the DOM -->
+<!-- need to find a temporaly variable in the for loop (for...in syntax), it loops through the array and dinamically assign values to the let variable -->
+<app-server *ngFor="let server of servers"></app-server>

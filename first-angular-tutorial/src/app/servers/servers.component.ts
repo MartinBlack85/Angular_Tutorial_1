@@ -24,6 +24,12 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
+  serverCreated = false;
+  servers= ['Testserver', 'Testserver 2'];
+  adminPassword = 'AdminPassword: SuperUser';
+  showPassword = false;
+  logs = 0;
+  detailsButtonLog = [];
 
   constructor() { 
     // after 2 seconds the anonim arrow function in the constructor will be executed and enables the button in the html by using data binding
@@ -43,7 +49,24 @@ export class ServersComponent implements OnInit {
 
   // function for event binding, the event will call it which is triggered by a user
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = "Server was created, Server name is: " + this.serverName;
+  }
+
+  onClickDetails() {
+    if(this.showPassword === false) {
+      this.showPassword = true;
+    }
+    else if(this.showPassword === true) {
+      this.showPassword = false;
+    }
+    this.logs++;
+    this.detailsButtonLog.push(this.logs)
+  }
+
+  getBlue() {
+    return this.detailsButtonLog.length >= 5 ? 'blue' : 'white';
   }
 
 }

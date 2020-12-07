@@ -4,5 +4,15 @@
 
 <!-- using string interpolation: adding dynamic typescript code into the html, it outputs the value of the referenced property -->
 <!-- the value always has to be a string, a function also can be used if it returns a string -->
-<p>{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }} </p>
+
+<!-- adding an attribute directive to dinamically change the css style of the html template content, additionally used with a property binding -->
+<!-- by this combined syntax we bind a property to a directive, used with a javascript object with a key-value pair -->
+
+<!-- ngClass used with property binding allows to change the css class for an html template element (key is the css class name, value is the condition) -->
+
+<!--  -->
+
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}"
+>{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }} </p>
 

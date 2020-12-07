@@ -13,9 +13,10 @@ export class UserInputComponent {
         
     }
 
-    onUserInput(event: Event) {
-        this.userName = (<HTMLInputElement>event.target).value;
-    }
+    // // only used for one way data binding by using the eventName($event) syntax
+    // onUserInput(event: Event) {
+    //     this.userName = (<HTMLInputElement>event.target).value;
+    // }
 
     userReset() {
         if(this.userName.length !== 0) {
