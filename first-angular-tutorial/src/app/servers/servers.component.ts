@@ -26,11 +26,7 @@ export class ServersComponent implements OnInit {
   serverName = 'TestServer';
   serverCreated = false;
   servers= ['Testserver', 'Testserver 2'];
-  adminPassword = 'AdminPassword: SuperUser';
-  showPassword = false;
-  logs = 0;
-  detailsButtonLog = [];
-
+  
   constructor() { 
     // after 2 seconds the anonim arrow function in the constructor will be executed and enables the button in the html by using data binding
     setTimeout(() => {
@@ -54,19 +50,5 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus = "Server was created, Server name is: " + this.serverName;
   }
 
-  onClickDetails() {
-    if(this.showPassword === false) {
-      this.showPassword = true;
-    }
-    else if(this.showPassword === true) {
-      this.showPassword = false;
-    }
-    this.logs++;
-    this.detailsButtonLog.push(this.logs)
-  }
-
-  getBlue() {
-    return this.detailsButtonLog.length >= 5 ? 'blue' : 'white';
-  }
-
+  
 }

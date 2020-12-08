@@ -1,0 +1,20 @@
+
+<h2>Assignment 3</h2>
+<!-- own solution -->
+<button class="btn btn-info" (click)="onClickDetails()">Display Details</button>
+<p *ngIf="showPassword">{{ adminPassword }}</p>
+<p *ngFor="let logs of detailsButtonLog"
+[ngStyle]="{backgroundColor: getBlue()}"
+[ngClass]="{log5: detailsButtonLog.length > 4}"
+>{{ detailsButtonLog[logs] }}</p>
+
+<!-- Example solution -->
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+<!-- we can extract additional iteration information when using the *ngFor module -->
+<button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
+<div 
+    *ngFor="let logItem of log, let i = index"
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 4}"
+>{{ logItem }}</div>

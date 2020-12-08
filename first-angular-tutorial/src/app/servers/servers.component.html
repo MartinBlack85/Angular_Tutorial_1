@@ -18,14 +18,6 @@
 <!-- <p>{{ serverName }}</p> -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
-<!-- Assigment: 3 -->
-<button class="btn btn-info" (click)="onClickDetails()">Display Details</button>
-<p *ngIf="showPassword">{{ adminPassword }}</p>
-<p *ngFor="let logs of detailsButtonLog"
-[ngStyle]="{backgroundColor: getBlue()}"
-[ngClass]="{log5: detailsButtonLog.length > 4}"
->{{ detailsButtonLog[logs] }}</p>
-
 <!-- to output the current typescript property value, using string interpolation -->
 <!-- <p>{{ allowNewServer }}</p> -->
 

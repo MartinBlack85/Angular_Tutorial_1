@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { UserInputComponent } from './userInput/userInput.component';
+import { Assignment3Component } from './assigment3/assignment3.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { UserInputComponent } from './userInput/userInput.component';
     AppComponent,
     ServerComponent,
     ServersComponent,
-    UserInputComponent
+    UserInputComponent,
+    Assignment3Component
   ],
   imports: [
     BrowserModule,
